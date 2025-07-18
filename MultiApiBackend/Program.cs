@@ -8,6 +8,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<WeatherService>();
+builder.Services.AddScoped<ExchangeService>();
+builder.Services.AddScoped<MovieSuggestionService>();
 
 var app = builder.Build();
 
