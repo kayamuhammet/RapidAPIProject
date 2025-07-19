@@ -10,7 +10,9 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<WeatherService>();
 builder.Services.AddScoped<ExchangeService>();
 builder.Services.AddScoped<MovieSuggestionService>();
-
+builder.Services.AddScoped<GoogleNewsService>();
+builder.Services.AddScoped<WordTranslatorService>();
+builder.Services.AddScoped<XTrendService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
