@@ -10,12 +10,18 @@ public class MovieSuggestionService
         _configuration = configuration;
     }
 
-    public async Task<string> GetMovieSugesstionsAsync(string genre)
+    public async Task<string> GetMovieSuggestionsAsync(string genre, string? cursor = null)
     {
+        var requestUri = $"https://imdb236.p.rapidapi.com/api/imdb/search?type=movie&genre={genre}&rows=25&sortOrder=ASC&sortField=id";
+        if (!string.IsNullOrEmpty(cursor))
+        {
+            requestUri += $"&cursorMark={cursor}";
+        }
+
         var request = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
-            RequestUri = new Uri($"https://imdb236.p.rapidapi.com/api/imdb/search?type=movie&genre={genre}&rows=25&sortOrder=ASC&sortField=id"),
+            RequestUri = new Uri(requestUri),
         };
 
         request.Headers.Add("X-RapidAPI-Key", _configuration["RapidApi:Key"]);

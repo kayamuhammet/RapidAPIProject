@@ -16,7 +16,7 @@ public class WeatherService
         var request = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
-            RequestUri = new Uri($"https://open-weather13.p.rapidapi.com/city?city={encodedCity}&lang=EN"),
+            RequestUri = new Uri($"https://open-weather13.p.rapidapi.com/city?city={encodedCity}&lang=TR"),
         };
 
         request.Headers.Add("X-RapidAPI-Key", _configuration["RapidApi:Key"]);

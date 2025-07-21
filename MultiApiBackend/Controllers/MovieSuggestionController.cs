@@ -13,9 +13,9 @@ public class MovieSuggestionController : ControllerBase
     }
 
     [HttpGet("{genre}")]
-    public async Task<IActionResult> GetMovieSuggestion(string genre)
+    public async Task<IActionResult> GetMovieSuggestion(string genre, [FromQuery] string? cursor = null)
     {
-        var result = await _movieSuggestionService.GetMovieSugesstionsAsync(genre);
+        var result = await _movieSuggestionService.GetMovieSuggestionsAsync(genre, cursor);
         return Ok(result);
     }
 }
