@@ -1,5 +1,5 @@
 import axios, { type AxiosResponse } from "axios";
-import type { NewsData,  TrendData } from "../types/api.types";
+import type { MovieData, NewsData, TrendData, WeatherData } from "../types/api.types";
 
 const BASE_URL = 'http://localhost:5277/api';
 
@@ -17,5 +17,15 @@ export const apiService = {
   
   getNews: (): Promise<AxiosResponse<NewsData>> => 
     apiClient.get<NewsData>('/GoogleNews'),
+
+  getMovies: (genre: string = 'action', cursor?: string): Promise<AxiosResponse<MovieData>> => {
+    let url = `/MovieSuggestion/${genre}`;
+    if (cursor) {
+      url += `?cursor=${cursor}`;
+    }
+    return apiClient.get<MovieData>(url);
+  },
   
+  getWeather: (city: string = 'Istanbul'): Promise<AxiosResponse<WeatherData>> => 
+    apiClient.get<WeatherData>(`/Weather/${city}`),
 };

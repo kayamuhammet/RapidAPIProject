@@ -24,3 +24,46 @@ export interface NewsData {
     authors?: string[];
   }>;
 }
+
+export interface MovieData {
+  rows: number;
+  numFound: number;
+  results: Array<{
+    id: string;
+    url?: string;
+    primaryTitle?: string;
+    originalTitle?: string;
+    type?: string;
+    description?: string;
+    primaryImage?: string;
+    releaseDate?: string;
+    startYear?: number;
+    endYear?: number;
+    runtimeMinutes?: number;
+    genres?: string[];
+    averageRating?: number;
+    numVotes?: number;
+    spokenLanguages?: string[]; 
+  }>;
+  nextCursorMark?: string;
+}
+
+export interface WeatherData {
+  coord: {
+    lon: number;
+    lat: number;
+  };
+  weather: Array<{
+    description: string;
+  }>;
+  main: {
+    temp: number;
+    temp_min: number;
+    temp_max: number;
+    humidity: number;
+  };
+  wind: {
+    speed: number;
+  };
+  name: string;
+}
