@@ -1,5 +1,5 @@
 import axios, { type AxiosResponse } from "axios";
-import type { MovieData, NewsData, TrendData, WeatherData } from "../types/api.types";
+import type { ExchangeData, MovieData, NewsData, TranslatorData, TrendData, WeatherData } from "../types/api.types";
 
 const BASE_URL = 'http://localhost:5277/api';
 
@@ -28,4 +28,10 @@ export const apiService = {
   
   getWeather: (city: string = 'Istanbul'): Promise<AxiosResponse<WeatherData>> => 
     apiClient.get<WeatherData>(`/Weather/${city}`),
+
+  translateWord: (word: string = 'hello'): Promise<AxiosResponse<TranslatorData>> => 
+    apiClient.get<TranslatorData>(`/WordTranslator/${word}`),
+  
+  getExchange: (baseCurrency: string = 'USD'): Promise<AxiosResponse<ExchangeData>> => 
+    apiClient.get<ExchangeData>(`/Exchange/${baseCurrency}`),
 };

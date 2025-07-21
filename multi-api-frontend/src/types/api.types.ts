@@ -67,3 +67,27 @@ export interface WeatherData {
   };
   name: string;
 }
+
+export interface TranslatorData {
+  word: string;
+  language: string;
+  proficiency?: string;
+  pronunciations?: Array<{
+    id: string;
+    pronunciation: string;
+    accent: string;
+    hasAudio: boolean;
+  }>;
+  translations: Array<{
+    translation: string;
+    confidence: number;
+    posTag: string;
+  }>;
+}
+
+export interface ExchangeData {
+  base_code: string;
+  rates: {
+    [key: string]: number;
+  };
+}
