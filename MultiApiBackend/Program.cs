@@ -13,6 +13,19 @@ builder.Services.AddScoped<MovieSuggestionService>();
 builder.Services.AddScoped<GoogleNewsService>();
 builder.Services.AddScoped<WordTranslatorService>();
 builder.Services.AddScoped<XTrendService>();
+
+// Not: Sadece localhost için güvenlidir. Canlıya alındığın da burası değiştirilmelidir.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5173")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,7 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowReactApp");
 app.UseAuthorization();
 
 app.MapControllers();
