@@ -3,6 +3,10 @@
 
 Bu proje, Rapid API'daki farklı API'lerden veri çekerek çeşitli bilgileri bir araya getiren bir full-stack web uygulamasıdır.
 
+# Tanıtım
+
+https://github.com/user-attachments/assets/205e768e-708b-4f16-8227-944bea08ae31
+
 ## Özellikler
 
 *   **Döviz Kurları:** Güncel DOLAR-TL kur bilgisini gösterir.
@@ -16,7 +20,7 @@ Bu proje, Rapid API'daki farklı API'lerden veri çekerek çeşitli bilgileri bi
 
 ### Backend (MultiApiBackend)
 
-*   **ASP.NET Core:** 
+*   **ASP.NET Core Web API:** 
 *   **C#:** 
 
 ### Frontend (multi-api-frontend)
@@ -33,7 +37,7 @@ Projenin hem backend hem de frontend kısımlarını çalıştırmak için aşa�
 
 ### Önkoşullar
 
-*   [.NET SDK](https://dotnet.microsoft.com/download) (En az .NET 6 veya üzeri önerilir)
+*   [.NET SDK](https://dotnet.microsoft.com/download) (.NET 7)
 *   [Node.js](https://nodejs.org/en/download/) (LTS sürümü önerilir)
 *   [npm](https://www.npmjs.com/get-npm) (Node.js ile birlikte gelir)
 
